@@ -1,0 +1,14 @@
+{
+  "name": "SurveyCreator (E2E tests)",
+  "version": "1.0.0",
+  "description": "SurveyTool E2E Automation Testing",
+  "main": "protractor.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Closed License",
+  "dependencies": {
+    "q": "^1.2.0"
+  }
+}
