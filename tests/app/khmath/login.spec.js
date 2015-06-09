@@ -11,10 +11,10 @@
         loginHelper.login();
     });
 
-    it('should login OK', function (done) {
+   /* it('should login OK', function (done) {
 
         expect(element(by.css('div.content-container div.pageHeading')).getText()).toEqual('Challenges');
 
         done();
-    });
+    });*/
 });
