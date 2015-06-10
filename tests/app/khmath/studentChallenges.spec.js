@@ -27,8 +27,17 @@ describe('Student Challenges', function () {
 
     it('SAMPLE TEST', function (done) {
 
-        //expect(studentChallengesPage.getTopicTitle(1).getText()).toBe('9999');
-        expect(studentChallengesPage.getTopicTitleByName('UNIT 2 - Proportional Reasoning  ').getText()).toBe('9999');
+        //expect(studentChallengesPage.getTopicTitleByIndex(1).getText()).toBe('9999');
+        expect(studentChallengesPage.getTopicTitleByName('Proportional Reasoning').getText()).toBe('9999');
+        studentChallengesPage.getTopicTitleByName('Proportional Reasoning').click();
+
+       /* bar =  element.all(by.css('div.challengeContainer')).all((by.css('div.panel-collapse'))).then(function(items){
+                //expect(items[5].getText()).toBe('888');
+                expect(items[5].element(by.cssContainingText('div.topic-block-wrapper','1')).getText()).toBe('888');
+                items[5].element(by.css('a.topic-block')).click();
+
+            });*/
+
 
         /* foo = element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading')))
 

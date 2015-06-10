@@ -12,7 +12,7 @@ var StudentChallengesPage = function (url) {
         }, 10000);
 
         return element(by.css('div.counterBlockXp a span')).getText();
-    }
+    };
 
     self.getStarCounter = function(){
 
@@ -21,25 +21,16 @@ var StudentChallengesPage = function (url) {
         }, 10000);
 
         return element(by.css('div.counterBlockStars a span')).getText();
-    }
+    };
 
     self.getTopicTitleByIndex = function(index){
         return element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading'))).get(index).element(by.css('div.topicTitle'));
-    }
+    };
 
     self.getTopicTitleByName = function(name){
-       // return element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading'))).get(index).element(by.css('div.topicTitle'));
-        elem = '';
-        element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading'))).each(function(e, index) {
-            // Will print 0 First, 1 Second, 2 Third.
-            e.getText().then(function (text) {
-                if(text == name){
-                    elem =  e.element(by.css('div.topicTitle'));
-                }
-            });
-        });
+        return element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading'))).all(by.cssContainingText('div.topicTitle',name)).first();
 
-        return elem;
+
     }
 };
 
