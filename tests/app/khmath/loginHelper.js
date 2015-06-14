@@ -12,14 +12,14 @@ var LoginHelper = function (browser, done) {
             self.browser.driver.manage().window().maximize();
             self.browser.driver.wait(function () {
                 return self.browser.driver.isElementPresent(by.name('username'));
-            }, 150000);
+            }, 250000);
             self.browser.driver.findElement(by.name('username')).sendKeys(_username);
             self.browser.driver.findElement(by.name('password')).sendKeys(_password);
 
             self.browser.driver.findElement(by.id('btnLogin')).click().then(function() {
                 self.browser.driver.wait(function () {
                    return self.browser.driver.isElementPresent(by.css('div.counterBlockXp a span'));
-                }, 150000);
+                }, 250000);
                 self.browser.ignoreSynchronization = false;
                 done();
             });

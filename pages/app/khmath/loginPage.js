@@ -3,7 +3,9 @@ var LoginPage = function (url) {
     var self = this,
         q = require('q');
 
-    self.url = url || '##/Login';
+    //self.url = url || '##/Login';
+    self.url = url || '#/Student/0140deb7-2345-e411-80d1-00155d84469d/Challenges';
+
     self.txtUsername =  element(by.model('loginData.Username'));
     self.txtPassword = element(by.model('loginData.Password'));
     self.btnLogin = element(by.id('btnLogin'));

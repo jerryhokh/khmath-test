@@ -4,8 +4,10 @@
 
 describe('Student Challenges', function () {
     var StudentChallengesPage = requirePage('app/khmath/studentChallengesPage'),
+        GamePlayPage = requirePage('app/khmath/gamePlayPage'),
         LoginHelper = requireHelper('app/khmath/LoginHelper');
     studentChallengesPage = new StudentChallengesPage();
+    gamePlayPage = new GamePlayPage();
 
 
     beforeEach(function (done) {
@@ -15,7 +17,7 @@ describe('Student Challenges', function () {
 
     });
 
-  /*  it('should XP counter works', function (done) {
+    it('should XP counter works', function (done) {
         expect(studentChallengesPage.getXPCounter()).toBeGreaterThan(0);
         done();
     });
@@ -23,48 +25,14 @@ describe('Student Challenges', function () {
     it('should Star counter works', function (done) {
         expect(studentChallengesPage.getStarCounter()).toBeGreaterThan(0);
         done();
-    });*/
+    });
 
-    it('SAMPLE TEST', function (done) {
+    it('Should show correct modal if selected correct answer', function (done) {
 
-        //expect(studentChallengesPage.getTopicTitleByIndex(1).getText()).toBe('9999');
-        expect(studentChallengesPage.getTopicTitleByName('Proportional Reasoning').getText()).toBe('9999');
-        studentChallengesPage.getTopicTitleByName('Proportional Reasoning').click();
+        studentChallengesPage.clickTopicActivity('Linear Relationships',1);
+        gamePlayPage.clickContinueToQuestion.click();
 
-       /* bar =  element.all(by.css('div.challengeContainer')).all((by.css('div.panel-collapse'))).then(function(items){
-                //expect(items[5].getText()).toBe('888');
-                expect(items[5].element(by.cssContainingText('div.topic-block-wrapper','1')).getText()).toBe('888');
-                items[5].element(by.css('a.topic-block')).click();
-
-            });*/
-
-
-        /* foo = element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading')))
-
-         expect(foo.get(0).getText()).toBe('9999');
- */
-//        foo =  element.all(by.css('div.challengeContainer')).all((by.css('div.panel-heading'))).then(function(items){
-//            expect(items[0].getText()).toBe('9999');
-//            expect(items.length).toBe('777');
-//           /* for (var i = 0; i < items.length; ++i){
-//                //expect(items[i].getText()).toBe('9999');
-//               *//* if(items[i].getText() == '5'){
-//                    items[i].element(by.css('div.topicTitle')).click();
-//                    expect(items[i].getText()).toBe('9999');
-//                    break;
-//                }*//*
-//            }*/
-//
-//             /*bar =  element.all(by.css('div.challengeContainer')).all((by.css('div.panel-collapse'))).then(function(items){
-//                //expect(items[5].getText()).toBe('888');
-//                expect(items[5].element(by.cssContainingText('div.topic-block-wrapper','1')).getText()).toBe('888');
-//                items[5].element(by.css('a.topic-block')).click();
-//
-//            });
-//*/
-//
-//
-//        });
+        //NOT DONE YET due to slow network today. it takes like 40secs to get to the login page.
 
         //expect( element(by.cssContainingText('button.btn', 'Continue to Question')).getText()).toBe('Continue to Question');
         //element(by.cssContainingText('button.btn', 'Continue to Question')).click();
